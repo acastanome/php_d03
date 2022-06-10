@@ -3,7 +3,7 @@ $cookie_name = $_GET['name'];
 $cookie_value = $_GET['value'];
 $action = $_GET['action'];
 
-if ($action == 'set') {
+if (($action == 'set') && $cookie_name && $cookie_value) {
     setcookie($cookie_name, $cookie_value, time() + 86400, '/');
 }
 if ($action == 'get') {
